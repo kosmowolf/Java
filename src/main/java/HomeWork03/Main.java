@@ -4,12 +4,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         //1. Написать программу, которая загадывает случайное число от 0 до 9 и пользователю дается 3 попытки угадать это число.
         // При каждой попытке компьютер должен сообщить, больше ли указанное пользователем число, чем загаданное, или меньше.
         // После победы или проигрыша выводится запрос – «Повторить игру еще раз? 1 – да / 0 – нет»(1 – повторить, 0 – нет).
-        guessRandomNumber();
+        guessRandomNumber(3);
 
         sc.close();
 
@@ -29,27 +29,28 @@ public class Main {
 
     }
 
-
-
-
-    private static void guessRandomNumber() {
+    private static void guessRandomNumber(int tryCount) {
         Random rand = new Random();
-        int tryCount = 3; // число попыток
+         // число попыток
         int guessingNumber = rand.nextInt(9); //загаданное число от 0 до 9
         while (true) {
             if (tryCount == 0) {
                 System.out.println("Исчерпано количество попыток! Вы проиграли.");
-                int question = sc.nextInt();
-                if (continueTheGame(question)==false){ break;}
-
+                if(continueTheGame()==0) {
+                    break;
+                } else {
+                   continueTheGame();
+                }
+                //break;
             } else {
-                System.out.println("Угадайте число от 0 до 9");
+                System.out.println("Угадайте число от 0 до 9. Осталось попыток:" + tryCount);
+                tryCount--;//декремент счетчика попыток
+
                 int enteredNumber = sc.nextInt();
                 //проверка выигрыша
                 if (enteredNumber == guessingNumber) {
                     System.out.println("Поздравляю! Вы выиграли!");
-                    int question = sc.nextInt();
-                    continueTheGame(question);
+                    continueTheGame();
                 } else {
                     if (enteredNumber > guessingNumber) {
                         System.out.println("Введенное число больше загаданного");
@@ -57,22 +58,26 @@ public class Main {
                         System.out.println("Введенное число меньше загаданного");
                     }
                 }
-                tryCount--;//декремент счетчика попыток
             }
-
         }
     }
 
-    private static boolean continueTheGame(int question) {
+    private static int continueTheGame() {
+        int answer = 3;
         System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
+        int question = sc.nextInt();
         if (question == 0) {
-            return false;
-        } else if (question == 1) {
-            guessRandomNumber();
-        } else {
-            System.out.println("Введено не корректное значение! Выход");
-            return false;
+            System.out.println("Досвидания!");
+            answer=0;
         }
-        return false;
+        if (question == 1) {
+            answer = 1;
+            guessRandomNumber(3);
+        }
+        if (question<0 || question>1) {
+            System.err.println("Введено не корректное значение!");
+            answer = 1;
+        }
+        return answer;
     }
 }

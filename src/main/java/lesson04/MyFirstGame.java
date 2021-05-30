@@ -13,6 +13,11 @@ public class MyFirstGame {
     private static Scanner sc = new Scanner(System.in);
     private static Random rand = new Random();
 
+    //Полностью разобраться с кодом, попробовать переписать с нуля;
+    //* Усовершенствовать метод проверки победы;
+    //* Расширить поле до 5х5 и в качестве условий победы установить серию равной 4.
+    //** Проработать искусственный интеллект, чтобы он мог блокировать ходы игрока.
+
     public static void main(String[] args) {
         initMap();
         printMap();

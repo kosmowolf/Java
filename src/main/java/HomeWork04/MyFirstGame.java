@@ -3,7 +3,7 @@ package HomeWork04;
 import java.util.Random;
 import java.util.Scanner;
 
-public class myGame {
+public class MyFirstGame {
     private static final int SIZE = 3;
     private static final int DOTS_TO_WIN = 3;
     private static final char DOT_EMPTY = '-';

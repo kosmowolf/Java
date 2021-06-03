@@ -10,13 +10,13 @@ public class Animal {
     String animalType;
     int age;
 
-    void running(){
+    public void running(int lenght){
         System.out.println(" бежит со скоростью ");
     }
-    void swimming() {
+    public void swimming(int lenght) {
         System.out.println(" плывет со скоростью ");
     }
-    void  jumping(){
+    public void  jumping(double height){
         System.out.println(" прыгает на расстояние ");
     }
 

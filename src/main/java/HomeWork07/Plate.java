@@ -3,7 +3,7 @@ package HomeWork07;
 public class Plate {
     private int food;
     private int isAngry;
-    public Plate(int food) {
+    public Plate(int food) {//6. Добавить в тарелку метод, с помощью которого можно было бы добавлять еду в тарелку.
         this.food = food;
     }
     public void decreaseFood(String catName, int n, int m) {//метод, который уменьшает food на указанную величину n.

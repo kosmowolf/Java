@@ -10,8 +10,6 @@ public class Cat {
     private int appetite;
     private int satiety; //сытость
 
-    //public Cat() {    }
-
     public Cat(String name, int appetite, int satiety) {
         this.name = name;
         this.appetite = appetite;
@@ -22,16 +20,21 @@ public class Cat {
     }
     public boolean satiety(int m){
         //3. Каждому коту нужно добавить поле сытость (когда создаем котов, они голодны). Если коту удалось покушать (хватило еды), сытость = true.
-        System.out.println("  Проверка сытости: "+ satiety + " - " + m + " = " + (satiety-m));
+        System.out.println("  Проверка сытости (норма - съедено): " + satiety + " - " + m + " = " + (satiety-m)); //служебная проверка можно закоментить
         if ((satiety-m)==0){
             return true;
         } else {
             //проверка насколько сыт(вне задания)
             if ((satiety-m)>0){
                 System.out.println("  \u001B[34m кот сыт на " + ((((double)satiety-m)/satiety)*100) + " % \u001B[0m");
+            } else {
+                System.out.println("  \u001B[35m кот голоден на " + Math.abs((((double)satiety-m)/satiety)*100) + " % \u001B[0m");
             }
             return false;
         }
+    }
+    public String catInfo(){
+        return name;
     }
 
 }

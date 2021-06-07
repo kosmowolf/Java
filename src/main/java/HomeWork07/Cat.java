@@ -10,16 +10,28 @@ public class Cat {
     private int appetite;
     private int satiety; //сытость
 
+    //public Cat() {    }
+
     public Cat(String name, int appetite, int satiety) {
         this.name = name;
         this.appetite = appetite;
         this.satiety = satiety;
     }
     public void eat(Plate p) {
-        p.decreaseFood(appetite, satiety);
+        p.decreaseFood(name, appetite, satiety);
     }
-    public boolean satiety(){
-        return true;
+    public boolean satiety(int m){
+        //3. Каждому коту нужно добавить поле сытость (когда создаем котов, они голодны). Если коту удалось покушать (хватило еды), сытость = true.
+        System.out.println("  Проверка сытости: "+ satiety + " - " + m + " = " + (satiety-m));
+        if ((satiety-m)==0){
+            return true;
+        } else {
+            //проверка насколько сыт(вне задания)
+            if ((satiety-m)>0){
+                System.out.println("  \u001B[34m кот сыт на " + ((((double)satiety-m)/satiety)*100) + " % \u001B[0m");
+            }
+            return false;
+        }
     }
 
 }

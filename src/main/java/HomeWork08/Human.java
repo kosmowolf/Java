@@ -1,22 +1,35 @@
 package HomeWork08;
 
-public class Human {
-    public boolean run(int lenght) {
+import HomeWork08.interfaces.Participant;
 
-        if (lenght>200){
-            System.out.println(" Человек не может пробежать дистанцию  " + lenght);
-        } else {
-            System.out.println(" Человек пробегает дистанцию "  + lenght);
-        }
-        return true;
+public class Human implements Participant{
+    private  int maxJumpHeight;
+    private  int maxRunLength;
+
+    public Human(int maxJumpHeight, int maxRunLength){
+
+        this.maxJumpHeight = maxJumpHeight;
+        this.maxRunLength = maxRunLength;
     }
 
-    public boolean jump(double height) {
-        if (height>2.0){
-            System.out.println(" Человек не может перепрыгнуть высоту " + height);
+    @Override
+    public boolean run(int lenght) {
+        if(maxRunLength >= lenght){
+            System.out.println("Человек бежит дистанцию " + maxRunLength);
+            return true;
         } else {
-            System.out.println(" Человек перепрыгивает высоту " + height);
+            System.out.println("Человек не может пробежать дистанцию " + maxRunLength);
+            return false;
         }
-        return true;
+    }
+    @Override
+    public boolean jump(int height) {
+        if(maxJumpHeight >= maxJumpHeight){
+            System.out.println("Человек делает прыжок " + maxRunLength);
+            return true;
+        } else {
+            System.out.println("Человек не может прыгнуть " + maxRunLength);
+            return false;
+        }
     }
 }

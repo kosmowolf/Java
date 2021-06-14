@@ -1,22 +1,38 @@
 package HomeWork08;
 
-public class Cat {
+import HomeWork08.interfaces.Participant;
+
+public class Cat implements Participant {
+
+    private  int maxJumpHeight;
+    private  int maxRunLength;
+
+    public Cat(int maxJumpHeight, int maxRunLength){
+
+        this.maxJumpHeight = maxJumpHeight;
+        this.maxRunLength = maxRunLength;
+    }
+
+    @Override
     public boolean run(int lenght) {
-
-        if (lenght>200){
-            System.out.println(" Кот не может пробежать дистанцию  " + lenght);
+        if(maxRunLength >= lenght){
+            System.out.println("Кот бежит дистанцию " + maxRunLength);
+            return true;
         } else {
-            System.out.println(" Кот пробегает дистанцию "  + lenght);
+            System.out.println("Кот не может пробежать дистанцию " + maxRunLength);
+            return false;
         }
-        return true;
+    }
+    @Override
+    public boolean jump(int height) {
+        if(maxJumpHeight >= maxJumpHeight){
+            System.out.println("Кот делает прыжок " + maxRunLength);
+            return true;
+        } else {
+            System.out.println("Кот не может прыгнуть " + maxRunLength);
+            return false;
+        }
     }
 
-    public boolean jump(double height) {
-        if (height>2.0){
-            System.out.println(" Кот не может перепрыгнуть высоту " + height);
-        } else {
-            System.out.println(" Кот перепрыгивает высоту " + height);
-        }
-        return true;
-    }
+
 }

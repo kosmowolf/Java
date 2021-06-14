@@ -1,22 +1,35 @@
 package HomeWork08;
 
-public class Robot {
-    public boolean run(int lenght) {
+import HomeWork08.interfaces.Participant;
 
-        if (lenght>200){
-            System.out.println(" Робот не может пробежать дистанцию  " + lenght);
-        } else {
-            System.out.println(" Робот пробегает дистанцию "  + lenght);
-        }
-        return true;
+public class Robot implements Participant {
+    private  int maxJumpHeight;
+    private  int maxRunLength;
+
+    public Robot(int maxJumpHeight, int maxRunLength){
+
+        this.maxJumpHeight = maxJumpHeight;
+        this.maxRunLength = maxRunLength;
     }
 
-    public boolean jump(double height) {
-        if (height>2.0){
-            System.out.println(" Робот не может перепрыгнуть высоту " + height);
+    @Override
+    public boolean run(int lenght) {
+        if(maxRunLength >= lenght){
+            System.out.println("Робот бежит дистанцию " + maxRunLength);
+            return true;
         } else {
-            System.out.println(" Робот перепрыгивает высоту " + height);
+            System.out.println("Робот не может пробежать дистанцию " + maxRunLength);
+            return false;
         }
-        return true;
+    }
+    @Override
+    public boolean jump(int height) {
+        if(maxJumpHeight >= maxJumpHeight){
+            System.out.println("Робот делает прыжок " + maxRunLength);
+            return true;
+        } else {
+            System.out.println("Робот не может прыгнуть " + maxRunLength);
+            return false;
+        }
     }
 }

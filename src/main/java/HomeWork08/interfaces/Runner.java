@@ -1,5 +1,5 @@
 package HomeWork08.interfaces;
 
-public interface Runnable {
+public interface Runner {
     boolean run(int lenght);
 }

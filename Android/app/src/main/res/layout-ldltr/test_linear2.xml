@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="FullName"
+        android:textColor="#2196F3"
+        android:textStyle="bold|italic"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="439dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textColorHint="#CA3232"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="410dp"
+        tools:text="Email" />
+
+    <EditText
+        android:id="@+id/editTextNumberPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberPassword"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="360dp"
+        tools:text="Password" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="Your phone"
+        android:textStyle="bold|italic"
+        tools:layout_editor_absoluteX="-10dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="314dp" />
+
+    <CalendarView
+        android:id="@+id/calendarView2"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="18dp"
+        android:layout_width="402dp"
+        android:layout_height="262dp" />
+</LinearLayout>
